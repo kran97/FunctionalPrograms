@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "karanalgorithms",
   "version": "1.0.0",
   "description": "",
@@ -11,4 +12,22 @@
   },
   "author": "",
   "license": "ISC"
+=======
+  "name": "karanprograms",
+  "version": "1.0.0",
+  "main": "powerOf2.js",
+  "scripts": {
+    "test": "mocha ||true"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0"
+  },
+  "description": ""
+>>>>>>> 3487cfd7c9000fa6ef886a22fbdcd4c9c483f992
 }
