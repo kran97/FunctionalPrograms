@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "powerOf2.js",
   "scripts": {
-    "test": "mocha ||true"
+    "test": "mocha || true"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +13,9 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^6.2.0"
+  },
+  "directories": {
+    "test": "test"
   },
   "description": ""
 }

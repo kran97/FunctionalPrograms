@@ -1,23 +1,34 @@
 var read = require('readline-sync');
-
-var year = read.question('Enter year: ');
-
-if(year.length === 4)
+module.exports={
+    yearInput,
+    leapYear
+}
+function yearInput()
 {
-    if(year%4 === 0 && year%100 != 0)
+    var years = (read.question('Enter year: '));
+    return years;
+}
+var year = yearInput();
+function leapYear(year)
+{
+    if(year.length === 4)
     {
-        console.log(year + " is a leap year");
-    }
-    else if(year%400 === 0)
-    {
-        console.log(year + " is a leap year");
+        if(year%4 === 0 && year%100 != 0)
+        {
+            console.log(year + " is a leap year");
+        }
+        else if(year%400 === 0)
+        {
+            console.log(year + " is a leap year");
+        }
+        else
+        {
+            console.log(year + " is NOT a leap year");
+        }
     }
     else
     {
-        console.log(year + " is NOT a leap year");
+        console.log("Year should be of 4 digits.");
     }
 }
-else
-{
-    console.log("Year should be of 4 digits.");
-}
+leapYear(year);

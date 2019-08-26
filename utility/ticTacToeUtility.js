@@ -18,13 +18,15 @@ module.exports = {
     output(arr, row, col)
     {
         var i, j;
-        for(i = 0; i<row; i++)
+        var arrText='';
+        for(let i =0; i<3; i++)
         {
-            for(j=0; j<col; j++)
+            for(let j= 0; j<arr[i].length; j++)
             {
-                console.log(arr[i][j] + " ");
+                arrText+=arr[i][j] + ' ';
             }
-            console.log("");
+            console.log(arrText);
+            arrText = '';
         }
     },
 
@@ -40,11 +42,11 @@ module.exports = {
         var firstChance = Math.random();
         if(firstChance<0.5)
         {
-            turn = 0;
+            turn = 1;
         }
         else
         {
-            turn = 1;
+            turn = 2;
         }
         return turn;
     },
@@ -80,7 +82,7 @@ module.exports = {
     coorValid(arr, x, y)
     {
         var validity = 0;
-        if(arr[x][y] == '*')
+        if(arr[x][y] == '*' && x>=0 && x<3 && y>=0 && y<3)
         {
             validity = 1;
         }
@@ -93,15 +95,13 @@ module.exports = {
 
     checkWin(arr, r, c)
     {
-        //var win = 0;
-        var symb = null;
+        var symb = '#';
         var i,j;
         for(i=0; i<r; i++)
         {
             if(arr[i][0] == arr[i][1] && arr[i][1] == arr [i][2] && arr[i][0]!='*')
             {
                 symb = arr[i][0];
-                //win=1;
                 return symb;
             }
         }
@@ -110,7 +110,6 @@ module.exports = {
             if(arr[0][j] == arr[1][j] && arr[1][j] == arr[2][j] && arr[0][j] != '*')
             {
                 symb = arr[0][j];
-                //win = 1;
                 return symb;
             }
         }
@@ -126,7 +125,15 @@ module.exports = {
         }
         else 
         {
-            this.checkSpace();
+            return symb;
         }
+    },
+
+    generateCoor()
+    {
+        var arr = [];
+        arr[0] = parseInt(Math.floor(Math.random()*3));
+        arr[1] = parseInt(Math.floor(Math.random()*3));
+        return arr;
     }
 }
